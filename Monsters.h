@@ -42,7 +42,7 @@ public:
     std::string getRace();
 
 //Monster Attack Method:
-static float monsterAttack(Monster&, Monster&);
+void static monsterAttack(Monster&, Monster&);
 
 void setHealthPoints(float);
 //SpeedChecker TO determine who is attacking first

@@ -7,7 +7,6 @@ class Fight {
 
 public:
     //Fight Method
-
     void monsterFight(Monster, Monster);
 
 

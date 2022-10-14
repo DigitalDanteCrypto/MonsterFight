@@ -14,17 +14,17 @@ Monster::Monster(float healthPoints, float attackDamage, float defencePoints, fl
 }
 //Monsters Setups
 Monster Monster::orcSetup() {
-    Monster orcMonster(300, 100, 40, 3, "orcMonsterPilgrim", Race::ORC);
+    Monster orcMonster(300, 100, 140, 3, "orcMonsterPilgrim", Race::ORC);
     return orcMonster;
 }
 
 Monster Monster::trollSetup() {
-    Monster trollMonster(500, 200, 20, 1, "trollMonsterGIGAMUTANT", Race::TROLL);
+    Monster trollMonster(500, 200, 200, 2, "trollMonsterGIGAMUTANT", Race::TROLL);
     return trollMonster;
 }
 
 Monster Monster::goblinSetup() {
-    Monster goblinMonster(100, 400, 20, 4, "goblinOfTheForest", Race::GOBLIN);
+    Monster goblinMonster(100, 400, 200, 4, "goblinOfTheForest", Race::GOBLIN);
     return goblinMonster;
 }
 
@@ -92,8 +92,10 @@ Monster Monster::userCreateMonster() {
     std::cout << "Enter your Race Name : ... " << std::endl;
     std::cin >> userRaceName;
     std::cout << "                    Monster Stats:               " << std::endl;
-    std::cout << "  health : " << userHealthPoints << "   attack : " << userAttackDamage <<  "   defence :  " << userDefencePoints <<   " speed : "  << userSpeed << std::endl;
+    std::cout << "  Health : " << userHealthPoints << "   Attack : " << userAttackDamage <<  "   Defence :  " << userDefencePoints <<   " Speed : "  << userSpeed << std::endl;
     std::cout << "  Monster race : " << userRaceName << std::endl;
+    std::cout << "" << std::endl;
+    std::cout << "" << std::endl;
 
     Monster userMonster(userHealthPoints, userAttackDamage, userDefencePoints, userSpeed, userRaceName, Race::USERRACE );
 
@@ -106,7 +108,7 @@ void Monster::setHealthPoints(float newHP) {
 
 }
 
-float Monster::monsterAttack(Monster &attacker, Monster &defender)  {
+void Monster::monsterAttack(Monster &attacker, Monster &defender)  {
 
     float damage = attacker.getAttackDamage() - defender.getDefencePoints();
     float healthPointsAfterDamage = defender.getHealthPoints() - damage;
